@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <div>
+          <span>X: {{lng}}, Y: {{lat}}</span>
+        </div> 
+        <div>
+                <mat-form-field>
+            <input #comment matInput type="text"  [(ngModel)]="value" >
+                </mat-form-field>
+                <button mat-raised-button (click)="setComment(comment.value)">Set comment</button>
+        </div>
+        <div class="example-container mat-elevation-z8">
+                <mat-table #table [dataSource]="dataSource">
+    
+                  <!-- Position Column -->
+                  <ng-container matColumnDef="No">
+                    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+                    <mat-cell *matCellDef="let marker"> {{marker.no}} </mat-cell>
+                  </ng-container>
+              
+                  <!-- Name Column -->
+                  <ng-container matColumnDef="Coordinates">
+                    <mat-header-cell *matHeaderCellDef> Coordinates </mat-header-cell>
+                    <mat-cell *matCellDef="let marker"> {{marker.coordinates}} </mat-cell>
+                  </ng-container>
+              
+                  <!-- Weight Column -->
+                  <ng-container matColumnDef="Location">
+                    <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
+                    <mat-cell *matCellDef="let marker"> {{marker.location}} </mat-cell>
+                  </ng-container>
+              
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+              </div>
+    </div>
+      <div class="col-xl-8 align-self-end marginTop">
+        <div id="gmap" class="sizeMap marginRight"></div>
+      </div>
+    </div>
+  </div>
