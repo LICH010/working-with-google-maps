@@ -30,23 +30,17 @@
       <div id="gmap" class="sizeMap marginRight"></div>
       <div class="example-container mat-elevation-z8">
           <mat-table #table [dataSource]="dataSource">
-        
-            <!--- Note that these columns can be defined in any order.
-                  The actual rendered columns are set as a property on the row definition" -->
-        
-            <!-- Position Column -->
+   
             <ng-container matColumnDef="No">
               <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
               <mat-cell *matCellDef="let marker"> {{marker.no}} </mat-cell>
             </ng-container>
         
-            <!-- Name Column -->
             <ng-container matColumnDef="Coordinates">
               <mat-header-cell *matHeaderCellDef> Coordinates </mat-header-cell>
               <mat-cell *matCellDef="let marker"> {{marker.coordinates}} </mat-cell>
             </ng-container>
         
-            <!-- Weight Column -->
             <ng-container matColumnDef="Location">
               <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
               <mat-cell *matCellDef="let marker"> {{marker.location}} </mat-cell>

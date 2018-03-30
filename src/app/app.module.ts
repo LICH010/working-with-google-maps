@@ -9,7 +9,7 @@ import { TwoPageComponent } from './two-page.component'
 
 import { MapService } from './mapService'
 
-import { AppRoutingModule }     from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 import {
   MatButtonModule,

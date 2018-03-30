@@ -118,7 +118,7 @@ export class MapService {
                     position: { lat: yMarker, lng: xMarker },
                     label: '' + this.labelIndex,
                     map: this.map,
-                    infowindow:'',
+                    infowindow: '',
                 })
                 this.arrayMarkers.push(marker)
                 this.labelIndex++;
@@ -226,13 +226,13 @@ export class MapService {
 
     attachMessage(marker, Message) {
         var infowindow = new google.maps.InfoWindow({
-          content: Message
+            content: Message
         });
-    
-        marker.addListener('click', function() {
-          infowindow.open(marker.get('map'), marker);
+
+        marker.addListener('click', function () {
+            infowindow.open(marker.get('map'), marker);
         });
-      }
+    }
 }
 
 
