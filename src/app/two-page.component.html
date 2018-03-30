@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-xl-5 marginTop">
+    <div class="col-xl-5 order-xl-fist order-sm-last marginTop">
       <div>
         <mat-card class="example-card">
           <mat-card-header>
@@ -25,8 +25,8 @@
                       [style.background]="markerInfo.color">
                     {{markerInfo.text}}
                   </mat-grid-tile>
-                  <mat-grid-tile class="marginBottom">
-                    <button value="1" #index class="background-color-button" mat-raised-button (click)="checkIn(marker[0].index)">check place</button>
+                  <mat-grid-tile>
+                    <button  class="background-color-button" mat-raised-button (click)="checkIn(marker[0].index)">check place</button>
                   </mat-grid-tile>
                 </mat-grid-list>
           </mat-card-actions>
@@ -35,7 +35,7 @@
 
 
     </div>
-    <div class="col-xl-7 align-self-end marginTop">
+    <div class="col-xl-7 order-xl-last  order-sm-first align-self-end marginTop">
       <div id="gmap" class="sizeMap marginRight"></div>
     </div>
   </div>

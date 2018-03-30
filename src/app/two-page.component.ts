@@ -122,7 +122,7 @@ export class TwoPageComponent implements OnInit {
     fillTable(comment: string, results: any, marker: any){
     
         let markerInfo = [
-            {text: "comment: "+comment, cols: 4, rows: 1, color: 'white',index:this.indexButton},
+            {text: "comment: "+comment, cols: 4, rows: 2, color: 'white',index:this.indexButton},
             {text: "coordinates: lat: " + marker.getPosition().lat() + " lng: " + marker.getPosition().lng(), cols: 2, rows: 1, color: 'white'},
             {text: "location: "+results[0].formatted_address, cols: 2, rows: 1, color: 'white'},
           ]
