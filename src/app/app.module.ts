@@ -17,7 +17,10 @@ import {
   MatSnackBarModule,
   MatSliderModule,
   MatInputModule,
-  MatTableModule
+  MatTableModule,
+  MatCardModule,
+  MatListModule,
+  MatGridListModule
 } from '@angular/material';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -38,6 +41,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatInputModule,
     MatTableModule,
+    MatCardModule,
+    MatGridListModule,
+    MatListModule,
     ReactiveFormsModule,
     FormsModule,
     AppRoutingModule

@@ -9,7 +9,12 @@
   .marginRight{
     margin-right:20px ;
   }
-  /* .mat-table {
-    overflow: auto;
-    max-height: 250px;
-  } */
+  .textarea{
+    width: 83%;
+    
+  }
+  .background-color-button{
+    background-color: green !important;
+    color: white !important;
+    height: 100%;
+  }

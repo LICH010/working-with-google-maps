@@ -1,43 +1,42 @@
-<div class="container">
-    <div class="row">
-      <div class="col-xl-4">
-        <div>
-          <span>X: {{lng}}, Y: {{lat}}</span>
-        </div> 
-        <div>
-                <mat-form-field>
-            <input #comment matInput type="text"  [(ngModel)]="value" >
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-5 marginTop">
+      <div>
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>X: {{lng}}, Y: {{lat}}</mat-card-title>
+            <mat-card-subtitle>Location: {{location}}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+                <mat-form-field class="textarea marginRight">
+                  <textarea #comment matInput type="text" [(ngModel)]="value"></textarea>
                 </mat-form-field>
-                <button mat-raised-button (click)="setComment(comment.value)">Set comment</button>
-        </div>
-        <div class="example-container mat-elevation-z8">
-                <mat-table #table [dataSource]="dataSource">
-    
-                  <!-- Position Column -->
-                  <ng-container matColumnDef="No">
-                    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-                    <mat-cell *matCellDef="let marker"> {{marker.no}} </mat-cell>
-                  </ng-container>
-              
-                  <!-- Name Column -->
-                  <ng-container matColumnDef="Coordinates">
-                    <mat-header-cell *matHeaderCellDef> Coordinates </mat-header-cell>
-                    <mat-cell *matCellDef="let marker"> {{marker.coordinates}} </mat-cell>
-                  </ng-container>
-              
-                  <!-- Weight Column -->
-                  <ng-container matColumnDef="Location">
-                    <mat-header-cell *matHeaderCellDef> Location </mat-header-cell>
-                    <mat-cell *matCellDef="let marker"> {{marker.location}} </mat-cell>
-                  </ng-container>
-              
-                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-                </mat-table>
-              </div>
-    </div>
-      <div class="col-xl-8 align-self-end marginTop">
-        <div id="gmap" class="sizeMap marginRight"></div>
+                <button class="background-color-button" mat-raised-button (click)="setComment(comment.value)">Set check point</button>
+          </mat-card-content>
+          <mat-card-actions>
+              <mat-grid-list cols="5" rowHeight="100px"
+              class="marginTop"
+              *ngFor="let marker of arrayInfoAboutMarkers">
+                  <mat-grid-tile
+                      *ngFor="let markerInfo of marker"
+                      [colspan]="markerInfo.cols"
+                      [rowspan]="markerInfo.rows"
+                      [style.background]="markerInfo.color">
+                    {{markerInfo.text}}
+                  </mat-grid-tile>
+                  <mat-grid-tile class="marginBottom">
+                    <button value="1" #index class="background-color-button" mat-raised-button (click)="checkIn(marker[0].index)">check place</button>
+                  </mat-grid-tile>
+                </mat-grid-list>
+          </mat-card-actions>
+        </mat-card>
       </div>
+
+
+    </div>
+    <div class="col-xl-7 align-self-end marginTop">
+      <div id="gmap" class="sizeMap marginRight"></div>
     </div>
   </div>
+</div>

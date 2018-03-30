@@ -118,7 +118,7 @@ export class MapService {
                     position: { lat: yMarker, lng: xMarker },
                     label: '' + this.labelIndex,
                     map: this.map,
-                    infowindow:''
+                    infowindow:'',
                 })
                 this.arrayMarkers.push(marker)
                 this.labelIndex++;
@@ -177,7 +177,8 @@ export class MapService {
         }
         return marker = new google.maps.Marker({
             position: location,
-            map: map
+            map: map,
+            icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
         });
     }
 
