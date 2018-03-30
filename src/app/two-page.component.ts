@@ -41,7 +41,7 @@ export class TwoPageComponent implements OnInit {
         private snackBar: MatSnackBar
     ) {
         this.setCoordinates = this.setCoordinates.bind(this);
-        this.fillTable = this.fillTable.bind(this);
+        this.addList = this.addList.bind(this);
         this.showLocationMarker = this.showLocationMarker.bind(this)
     }
 
@@ -64,7 +64,7 @@ export class TwoPageComponent implements OnInit {
             });
             this.mapService.attachMessage(marker, comment)
             this.arrayMarkers.push(marker);
-            this.getGeocode(comment, marker, this.fillTable)
+            this.getGeocode(comment, marker, this.addList)
             this.value = '';
         }
     }
@@ -115,7 +115,7 @@ export class TwoPageComponent implements OnInit {
         this.globalRef.tick();
     }
 
-    fillTable(comment: string, results: any, marker: any) {
+    addList(comment: string, results: any, marker: any) {
         let markerInfo = [
             { text: "comment: " + comment, cols: 4, rows: 2, color: 'white', index: this.indexButton },
             { text: "coordinates: lat: " + marker.getPosition().lat() + " lng: " + marker.getPosition().lng(), cols: 2, rows: 1, color: 'white' },
