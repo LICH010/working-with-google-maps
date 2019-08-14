@@ -3,11 +3,11 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app.component';
 import { RouterPageComponent } from './router-page.component'
-import { TwoPageComponent } from './two-page.component'
+import { TwoPageComponent } from './components/two-page.component'
 
-import { MapService } from './mapService'
+import { MapService } from './services/mapService'
 
 import { AppRoutingModule } from './app-routing.module';
 
